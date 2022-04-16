@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Resources/theme.tres" type="Theme" id=1]
+[ext_resource path="res://Resources/font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scenes/HUD.gd" type="Script" id=3]
+
+[node name="HUD" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 40.0
+margin_top = 540.0
+margin_right = -40.0
+margin_bottom = -40.0
+
+[node name="Label" type="Label" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_right = -130.0
+custom_fonts/font = ExtResource( 2 )
+autowrap = true
+
+[node name="ClearButton" type="Button" parent="Panel"]
+margin_left = 1080.0
+margin_right = 1200.0
+margin_bottom = 70.0
+theme = ExtResource( 1 )
+text = "Clear"
+
+[node name="NextButton" type="Button" parent="Panel"]
+margin_left = 1080.0
+margin_top = 75.0
+margin_right = 1200.0
+margin_bottom = 145.0
+theme = ExtResource( 1 )
+text = "Next"
+
+[node name="SubmitButton" type="Button" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1080.0
+margin_top = 150.0
+theme = ExtResource( 1 )
+text = "Submit"
+
+[connection signal="pressed" from="Panel/ClearButton" to="." method="_on_ClearButton_pressed"]
+[connection signal="pressed" from="Panel/NextButton" to="." method="_on_NextButton_pressed"]
+[connection signal="pressed" from="Panel/SubmitButton" to="." method="_on_SubmitButton_pressed"]

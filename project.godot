@@ -1,0 +1,49 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Button",
+"class": "WordButton",
+"language": "GDScript",
+"path": "res://Scenes/WordButton.gd"
+}, {
+"base": "Area2D",
+"class": "WordButton_2",
+"language": "GDScript",
+"path": "res://WordButton_2.gd"
+} ]
+_global_script_class_icons={
+"WordButton": "",
+"WordButton_2": ""
+}
+
+[application]
+
+config/name="ReveiwProgram"
+run/main_scene="res://Scenes/Main.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+Data="*res://Scripts/Data.gd"
+Manager="*res://Scripts/Manager.gd"
+
+[display]
+
+window/size/width=1280
+window/size/height=800
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
